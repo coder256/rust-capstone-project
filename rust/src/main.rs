@@ -149,23 +149,11 @@ fn main() -> bitcoincore_rpc::Result<()> {
     }
 
     writeln!(file, "{}", tx.info.txid);
-    writeln!(
-        file,
-        "{}",
-        miner_input_address.unwrap().assume_checked().to_string()
-    );
+    writeln!(file, "{}", miner_input_address.unwrap().assume_checked());
     writeln!(file, "{}", miner_input_amount.to_btc());
-    writeln!(
-        file,
-        "{}",
-        trader_output_address.unwrap().assume_checked().to_string()
-    );
+    writeln!(file, "{}", trader_output_address.unwrap().assume_checked());
     writeln!(file, "{}", trader_output_amount.to_btc());
-    writeln!(
-        file,
-        "{}",
-        miner_change_address.unwrap().assume_checked().to_string()
-    );
+    writeln!(file, "{}", miner_change_address.unwrap().assume_checked());
     writeln!(file, "{}", miner_change_amount.to_btc());
     writeln!(file, "{}", tx.fee.unwrap().to_btc());
     writeln!(file, "{}", tx.info.blockheight.unwrap());
