@@ -114,7 +114,7 @@ fn main() -> bitcoincore_rpc::Result<()> {
     let tx = rpc.get_transaction(&txid, None)?;
 
     // Write the data to ../out.txt in the specified format given in readme.md
-    let mut file = File::create("out.txt")?;
+    let mut file = File::create("../out.txt")?;
 
     let blockhash = tx.info.blockhash.unwrap();
 
